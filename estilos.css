@@ -1,0 +1,583 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+:root {
+    --blanco: rgb(245, 244, 239);
+    --negro: rgb(32, 32, 32);
+    --fondoart: rgb(234, 231, 222);
+    --blanco-apagado: rgb(155, 154, 149);
+    --celeste: rgb(53, 240, 234);
+    --rojo: rgb(240, 53, 53);
+    --verde: rgb(59, 240, 53);
+}
+
+body {
+    background-color: var(--negro);
+}
+
+/* MENU */
+#menu {
+    display: none;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.2em;
+    align-items: center;
+}
+
+header a img {
+    width: 8em;
+}
+
+header nav a {
+    text-decoration: none;
+    color: var(--blanco);
+    letter-spacing: 0.3em;
+}
+
+/* HERO */
+
+#hero {
+    background-image: url(img/hero.jpg);
+    height: 420px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#hero div {
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+    color: var(--blanco);
+    padding: 0.5em;
+    max-width: 65%;
+    position: absolute;
+    bottom: 2em;
+    left: 1em;
+}
+
+#hero div h1 {
+    font-size: 1.6em;
+}
+
+#hero div p {
+    display: none;
+    color: var(--blanco);
+}
+
+/* ARTICLES */
+
+/* ocultar */
+
+.tag {
+    display: none;
+}
+
+#programacion article:nth-of-type(5) {
+    display: none;
+}
+
+#programacion article:nth-of-type(4) div {
+    display: none;
+}
+
+/* ahora si, estilos */
+
+#programacion {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 0.5em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#programacion div {
+    margin: 0.5em;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+    justify-content: center;
+}
+
+#programacion article {
+    flex-basis: 350px;
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 1em;
+    gap: 0.7em;
+    background-color: var(--fondoart);
+}
+
+#programacion h2 {
+    margin: 1.5em 0 0.5em 0;
+    color: var(--blanco);
+    text-align: center;
+    font-size: 1.4em;
+    font-weight: 400;
+}
+
+#programacion article img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+#programacion article h3 {
+    font-size: 1em;
+    letter-spacing: 0.03em;
+    margin: 0.5em 0;
+    color: var(--negro);
+    border-bottom: 1.5px solid var(--negro);
+    padding-bottom: 0.5em;
+}
+
+#programacion article p {
+    font-size: 0.7em;
+    color: var(--negro);
+}
+
+#programacion article button,
+#grilla figure div button {
+    margin-top: auto;
+    padding: 0.6em 1.2em;
+    border: 1.5px solid var(--negro);
+    background-color: var(--blanco);
+    color: var(--negro);
+    text-transform: uppercase;
+    letter-spacing: 0.3em;
+    width: 100%;
+    transition: 0.3s;
+}
+
+#programacion article div {
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    height: 150px;
+}
+
+/* GRILLA */
+
+/* ocultar */
+
+#grilla figure:nth-of-type(3) {
+    display: none;
+}
+
+#grilla figure:nth-of-type(5) {
+    display: none;
+}
+
+#grilla figure:nth-of-type(6) {
+    display: none;
+}
+
+/* diseño */
+
+#grilla {
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    padding-top: 3em;
+    margin: 1em;
+}
+
+#grilla figure {
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+#grilla figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+#grilla figure div {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+    padding: 1em;
+    flex-direction: column;
+    gap: 1em;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    text-align: center;
+}
+
+#grilla figure img {
+    filter: saturate(0.3);
+    transition: 0.3s;
+}
+
+/* texto */
+
+
+#grilla figure div h3 {
+    color: var(--blanco);
+}
+
+/* FORUMULARIO */
+#formulario {
+    padding: 1.5em;
+    margin-top: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    background-color: var(--fondoart);
+    gap: 1.4em;
+}
+
+#formulario form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.7em;
+    width: 100%;
+}
+
+#formulario h4 {
+    font-size: 1em;
+    font-weight: 400;
+    text-align: center;
+    color: var(--negro);
+    border-bottom: 1.5px solid var(--negro);
+    padding-bottom: 0.4em;
+}
+
+#formulario form input {
+    width: 320px;
+    padding: 8px 14px;
+    font-size: 0.8em;
+    border-radius: 0;
+    color: var(--negro);
+    background-color: var(--blanco);
+}
+
+#formulario form button {
+    width: 100px;
+    padding: 2px;
+    font-size: 0.8em;
+    border-radius: 0;
+    color: var(--negro);
+    background-color: var(--blanco);
+    transition: 0.3s;
+}
+
+/*FOOTER*/
+
+footer {
+    padding: 1em;
+    color: var(--negro);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5em;
+    background-color: var(--blanco-apagado);
+}
+
+footer h4 {
+    font-size: 0.8em;
+    font-weight: 400;
+}
+
+footer a {
+    text-decoration: none;
+    color: var(--negro);
+}
+
+/* TABLEEEEEEEEEEEET */
+@media all and (min-width:768px) {
+
+    /* MENU */
+    #menu {
+        display: flex;
+        width: 50%;
+        justify-content: space-between;
+    }
+
+    #menu a {
+        font-size: 0.8em;
+    }
+
+    #hamburguesa {
+        display: none;
+    }
+
+    /* HERO */
+
+    #hero div {
+        max-width: 60%;
+        left: 2em;
+    }
+
+    #hero div h1 {
+        font-size: 2em;
+    }
+
+    /* PROGRAMACION */
+    #programacion h2 {
+        font-size: 1.8em
+    }
+
+    #programacion article:nth-of-type(4) div {
+        display: flex;
+    }
+
+    #programacion article {
+        text-align: left;
+    }
+
+    /* GRILLA */
+
+    #grilla figure:nth-of-type(3) {
+        display: block;
+    }
+
+    #grilla {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 50vh);
+        margin: 1em;
+    }
+
+    #grilla figure:nth-of-type(2) {
+        grid-row: span 2;
+    }
+
+    #grilla figure:nth-of-type(4) {
+        grid-row: 2;
+    }
+
+    #grilla figure:nth-of-type(3) {
+        grid-column: span 2;
+    }
+
+    #grilla figure:nth-of-type(2) div {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 70%;
+    }
+
+    #grilla figure:nth-of-type(3) div {
+        bottom: 0;
+        left: 0;
+        top: auto;
+        transform: none;
+        margin: 1em;
+        text-align: left;
+    }
+
+    #grilla figure:nth-of-type(3) p {
+        color: var(--blanco);
+    }
+
+    /*FOOTER*/
+
+    footer {
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 2em;
+    }
+
+}
+
+/*ECRITORIOOOOO */
+@media all and (min-width:1200px) {
+
+    /* MENU */
+    #menu {
+        width: 40%;
+    }
+
+    header a img {
+        width: 10em;
+    }
+
+    #menu a {
+        font-size: 1em;
+        transition: 0.2s;
+    }
+
+    #menu a:hover {
+        transform: scale(110%);
+        font-weight: 900;
+
+    }
+
+    /* HERO*/
+    #hero {
+        height: 550px;
+        transition: 0.3s;
+    }
+
+    #hero:hover {
+        background-image: url(img/hero2.jpg);
+    }
+
+    #hero div {
+        max-width: 40%;
+        left: 5em;
+    }
+
+    #hero div p {
+        display: block;
+        font-size: 1.1em;
+    }
+
+    #hero div h1 {
+        font-size: 2.5em;
+    }
+
+    #hero div {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    /* PROGRAMACION */
+
+    #programacion h2 {
+        font-size: 2.2em
+    }
+
+    #programacion article:nth-of-type(5) {
+        display: flex;
+    }
+
+    #programacion article {
+        position: relative;
+    }
+
+    #programacion article .tag {
+        display: block;
+        position: absolute;
+        top: 0em;
+        right: 0em;
+        color: var(--negro);
+        font-size: 1.3em;
+        padding: 0.2em 0.5em;
+        font-weight: bold;
+        z-index: 1;
+    }
+
+    article:nth-of-type(1) .tag {
+        background-color: var(--celeste);
+    }
+
+    article:nth-of-type(2) .tag {
+        background-color: var(--rojo);
+    }
+
+    article:nth-of-type(3) .tag {
+        background-color: var(--verde);
+    }
+
+    #programacion article img {
+        filter: grayscale(1);
+        transition: 0.3s;
+    }
+
+    #programacion article:hover img {
+        filter: grayscale(0);
+        transform: scale(110%);
+    }
+
+
+    #programacion article:hover button {
+        background-color: var(--blanco-apagado);
+        font-weight: bold;
+        transform: scale(103%);
+    }
+
+
+    /* GRILLA */
+    #grilla figure:nth-of-type(5) {
+        display: block;
+    }
+
+    #grilla figure:nth-of-type(6) {
+        display: block;
+    }
+
+    #grilla {
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 45vh);
+        margin: 0;
+    }
+
+    #grilla figure:nth-of-type(2) {
+        grid-row: span 2;
+    }
+
+    #grilla figure:nth-of-type(3) {
+        grid-column: span 2;
+    }
+
+    #grilla figure div button:hover {
+        background-color: var(--negro);
+        color: var(--blanco);
+        font-weight: bold;
+    }
+
+    #grilla figure:hover img {
+        filter: saturate(1);
+    }
+
+    /*FORUMULARIO*/
+    #formulario button:hover {
+        background-color: var(--negro);
+        color: var(--blanco);
+    }
+
+    #formulario h4 {
+        font-size: 1.3em;
+    }
+
+    /*FOOTER*/
+    footer {
+        padding: 1em 3em;
+    }
+
+    footer h4 {
+        font-size: 1em;
+    }
+
+    footer div {
+        display: flex;
+        flex-direction: row;
+        width: 10%;
+        justify-content: space-between;
+    }
+
+    footer div a {
+        transition: 0.3s;
+    }
+
+    footer div a:hover {
+        transform: scale(125%);
+    }
+
+}
